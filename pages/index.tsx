@@ -68,7 +68,7 @@ export default function Home() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 width-full gap-10 m-10">
         {query !== '' ? filtered : unFiltered}
       </div>
-      {query !== '' &&
+      {query === '' &&
         <Pagination
           className="pagination-bar App"
           currentPage={currentPage}
