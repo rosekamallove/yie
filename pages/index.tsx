@@ -44,6 +44,8 @@ export default function Home() {
     />
   ))
 
+  console.log(data);
+
   const filtered = filteredData.map((data, index) => (
     <Card
       key={index}
