@@ -22,8 +22,7 @@ export default function HomepageScroll() {
         setData([...data, ...json?.results]);
         setCall(call + 1);
       });
-  }
-
+  };
 
   return (
     <>
@@ -31,16 +30,23 @@ export default function HomepageScroll() {
         dataLength={data.length}
         next={getMorePost}
         hasMore={true}
-        loader={<h3>Loading...</h3>}
+        loader={
+          <h3 className="m-10 font-bold text-2xl text-gray-500">Loading...</h3>
+        }
         endMessage={<h3>Loading...</h3>}
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 width-full gap-10 m-10">
           {data.map((data: any, index: number) => (
-            <Card currentPage={1} key={index} index={index} data={data} position="scroll" />
+            <Card
+              currentPage={1}
+              key={index}
+              index={index}
+              data={data}
+              position="scroll"
+            />
           ))}
         </div>
       </InfiniteScroll>
     </>
   );
 }
-
